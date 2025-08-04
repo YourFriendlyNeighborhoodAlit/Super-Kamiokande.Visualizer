@@ -3,10 +3,9 @@ import pytesseract
 import json
 from pathlib import Path
 
-# Set the Tesseract executable path
-# IMPORTANT: Ensure this path is correct for your Tesseract installation
-pytesseract.pytesseract.tesseract_cmd = r"C:\Users\bearm\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
-
+# NOTE: The pytesseract command path is removed.
+# pytesseract will now automatically find the 'tesseract' executable
+# in the system's PATH, which is the correct way for a server environment.
 
 def extract_metadata(image: Image.Image) -> dict:
     # Metadata region identified (top-left text block)
