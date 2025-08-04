@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super-K Visualizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        canvas {
+            background-color: #161b22;
+            border: 2px solid #30363d;
+            border-radius: 1rem;
+            display: block;
+            touch-action: none; /* Prevents default browser touch gestures */
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            aspect-ratio: 1 / 1; /* Maintain a 1:1 aspect ratio */
+        }
+    </style>
+</head>
+<body class="p-6">
+    <h1 class="text-4xl font-bold mb-4">Super-K Visualizer</h1>
+
+    <div class="flex flex-col items-center space-y-4 w-full max-w-2xl mb-6">
+        <canvas id="glCanvas"></canvas>
+        <div id="dataOutput" class="bg-gray-800 text-green-400 p-4 rounded-lg w-full text-center">
+            Click 'Update' to start. Use your mouse to rotate and scroll to zoom.
+        </div>
+        <button id="updateButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-colors duration-200">
+            Update
+        </button>
+    </div>
+
+    <!-- This is the new section for the original GIF feed -->
+    <div class="flex flex-col items-center space-y-4 w-full max-w-2xl mt-8">
+        <h2 class="text-2xl font-bold">Original Super-K GIF Feed</h2>
+        <img id="originalImage" src="static/latest_event.gif" alt="Super-K Realtime Monitor GIF" class="rounded-lg shadow-lg border-2 border-gray-700 w-full">
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
